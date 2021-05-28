@@ -49,7 +49,7 @@ echo "<script type='text/javascript'> document.location = 'confirmed-bookings.ph
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal | New Bookings   </title>
+	<title>Car Rental Portal | Reservas   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -99,11 +99,11 @@ echo "<script type='text/javascript'> document.location = 'confirmed-bookings.ph
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Booking Details</h2>
+						<h2 class="page-title">Detalhes da reserva</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Bookings Info</div>
+							<div class="panel-heading">Informações</div>
 							<div class="panel-body">
 
 
@@ -126,82 +126,82 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {				?>	
-	<h3 style="text-align:center; color:red">#<?php echo htmlentities($result->BookingNumber);?> Booking Details </h3>
+	<h3 style="text-align:center; color:red">#<?php echo htmlentities($result->BookingNumber);?> Detalhes da reserva </h3>
 
 		<tr>
-											<th colspan="4" style="text-align:center;color:blue">User Details</th>
+											<th colspan="4" style="text-align:center;color:blue">Informações do cliente</th>
 										</tr>
 										<tr>
-											<th>Booking No.</th>
+											<th>Reserva No.</th>
 											<td>#<?php echo htmlentities($result->BookingNumber);?></td>
-											<th>Name</th>
+											<th>Nome</th>
 											<td><?php echo htmlentities($result->FullName);?></td>
 										</tr>
 										<tr>											
 											<th>Email Id</th>
 											<td><?php echo htmlentities($result->EmailId);?></td>
-											<th>Contact No</th>
+											<th>Contato</th>
 											<td><?php echo htmlentities($result->ContactNo);?></td>
 										</tr>
 											<tr>											
-											<th>Address</th>
+											<th>Endereço</th>
 											<td><?php echo htmlentities($result->Address);?></td>
-											<th>City</th>
+											<th>Cidade</th>
 											<td><?php echo htmlentities($result->City);?></td>
 										</tr>
 											<tr>											
-											<th>Country</th>
+											<th>Pais</th>
 											<td colspan="3"><?php echo htmlentities($result->Country);?></td>
 										</tr>
 
 										<tr>
-											<th colspan="4" style="text-align:center;color:blue">Booking Details</th>
+											<th colspan="4" style="text-align:center;color:blue">Informações da reserva</th>
 										</tr>
 											<tr>											
-											<th>Vehicle Name</th>
+											<th>Nome do veiculo</th>
 											<td><a href="edit-vehicle.php?id=<?php echo htmlentities($result->vid);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></td>
-											<th>Booking Date</th>
+											<th>Data da reserva</th>
 											<td><?php echo htmlentities($result->PostingDate);?></td>
 										</tr>
 										<tr>
-											<th>From Date</th>
+											<th>Da data</th>
 											<td><?php echo htmlentities($result->FromDate);?></td>
-											<th>To Date</th>
+											<th>Até a data</th>
 											<td><?php echo htmlentities($result->ToDate);?></td>
 										</tr>
 <tr>
-	<th>Total Days</th>
+	<th>Total de dias</th>
 	<td><?php echo htmlentities($tdays=$result->totalnodays);?></td>
-	<th>Rent Per Days</th>
+	<th>R$ por dia</th>
 	<td><?php echo htmlentities($ppdays=$result->PricePerDay);?></td>
 </tr>
 <tr>
-	<th colspan="3" style="text-align:center">Grand Total</th>
+	<th colspan="3" style="text-align:center">Valor total</th>
 	<td><?php echo htmlentities($tdays*$ppdays);?></td>
 </tr>
 <tr>
-<th>Booking Status</th>
+<th>Status da reserva</th>
 <td><?php 
 if($result->Status==0)
 {
-echo htmlentities('Not Confirmed yet');
+echo htmlentities('Não confirmada');
 } else if ($result->Status==1) {
-echo htmlentities('Confirmed');
+echo htmlentities('Confirmada');
 }
  else{
- 	echo htmlentities('Cancelled');
+ 	echo htmlentities('Cancelada');
  }
 										?></td>
-										<th>Last pdation Date</th>
+										<th>Data de Atualização</th>
 										<td><?php echo htmlentities($result->LastUpdationDate);?></td>
 									</tr>
 
 									<?php if($result->Status==0){ ?>
 										<tr>	
 										<td style="text-align:center" colspan="4">
-				<a href="bookig-details.php?aeid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Confirm this booking')" class="btn btn-primary"> Confirm Booking</a> 
+				<a href="bookig-details.php?aeid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Deseja realmente confirmar esta reserva')" class="btn btn-primary"> Confirmar reserva</a> 
 
-<a href="bookig-details.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Cancel this Booking')" class="btn btn-danger"> Cancel Booking</a>
+<a href="bookig-details.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Deseja realmente cancelar esta reserva')" class="btn btn-danger"> Cancelar reserva</a>
 </td>
 </tr>
 <?php } ?>
