@@ -107,7 +107,7 @@ $bookings=$query2->rowCount();
 													<div class="stat-panel-title text-uppercase">Total de reservas</div>
 												</div>
 											</div>
-											<a href="manage-bookings.php" class="block-anchor panel-footer text-center">Detalhes &nbsp; <i class="fa fa-arrow-right"></i></a>
+											<a href="new-bookings.php" class="block-anchor panel-footer text-center">Detalhes &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 									<div class="col-md-3">

@@ -16,7 +16,7 @@ $query = $dbh->prepare($sql);
 $query -> bindParam(':pagetype',$pagetype, PDO::PARAM_STR);
 $query-> bindParam(':pagedetails',$pagedetails, PDO::PARAM_STR);
 $query -> execute();
-$msg="Page data updated  successfully";
+$msg="Dados da pagina atualizados";
 
 }
 
@@ -139,7 +139,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                   <option value="manage-pages.php?type=terms">Termos e condições</option>
                   <option value="manage-pages.php?type=privacy">privacidade e política
 </option>
-                  <option value="manage-pages.php?type=aboutus">about us</option> 
+                  <option value="manage-pages.php?type=aboutus">Sobre</option> 
                   <option value="manage-pages.php?type=faqs">FAQs</option>
                 </select>
 												</div>
@@ -154,15 +154,15 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 			switch($_GET['type'])
 			{
 				case "terms" :
-									echo "Terms and Conditions";
+									echo "Termos e Condições";
 									break;
 				
 				case "privacy" :
-									echo "Privacy And Policy";
+									echo "Privacidade e Politica";
 									break;
 				
 				case "aboutus" :
-									echo "About US";
+									echo "Sobre";
 									break;
 			
 				case "faqs" :
