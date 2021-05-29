@@ -33,7 +33,7 @@ $msg="Page data updated  successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal | Admin Create Brand</title>
+	<title>Car Rental Portal | Paginas</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -119,26 +119,27 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Manage Pages </h2>
+						<h2 class="page-title">Gerenciar páginas</h2>
 
 						<div class="row">
 							<div class="col-md-10">
 								<div class="panel panel-default">
-									<div class="panel-heading">Form fields</div>
+									<div class="panel-heading">Campos do formulario</div>
 									<div class="panel-body">
 										<form method="post" name="chngpwd" class="form-horizontal" onSubmit="return valid();">
 										
 											
-  	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+  	        	  <?php if($error){?><div class="errorWrap"><strong>ERRO</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+				else if($msg){?><div class="succWrap"><strong>SUCESSO</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 											<div class="form-group">
-												<label class="col-sm-4 control-label">select Page</label>
+												<label class="col-sm-4 control-label">Selecione pagina</label>
 												<div class="col-sm-8">
 															   <select name="menu1" onChange="MM_jumpMenu('parent',this,0)">
-                  <option value="" selected="selected" class="form-control">***Select One***</option>
-                  <option value="manage-pages.php?type=terms">terms and condition</option>
-                  <option value="manage-pages.php?type=privacy">privacy and policy</option>
-                  <option value="manage-pages.php?type=aboutus">aboutus</option> 
+                  <option value="" selected="selected" class="form-control">***Selecione 1***</option>
+                  <option value="manage-pages.php?type=terms">Termos e condições</option>
+                  <option value="manage-pages.php?type=privacy">privacidade e política
+</option>
+                  <option value="manage-pages.php?type=aboutus">about us</option> 
                   <option value="manage-pages.php?type=faqs">FAQs</option>
                 </select>
 												</div>
@@ -146,7 +147,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 											<div class="hr-dashed"></div>
 											
 											<div class="form-group">
-												<label class="col-sm-4 control-label">selected Page</label>
+												<label class="col-sm-4 control-label">Selecione a pagina</label>
 												<div class="col-sm-8">
 						<?php
 			
@@ -179,7 +180,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 											</div>
 								
 									<div class="form-group">
-												<label class="col-sm-4 control-label">Page Details </label>
+												<label class="col-sm-4 control-label">Descreva a pagina</label>
 												<div class="col-sm-8">
 			<textarea class="form-control" rows="5" cols="50" name="pgedetails" id="pgedetails" placeholder="Package Details" required>
 										<?php 
@@ -205,7 +206,7 @@ echo htmlentities($result->detail);
 											<div class="form-group">
 												<div class="col-sm-8 col-sm-offset-4">
 								
-												<button type="submit" name="submit" value="Update" id="submit" class="btn-primary btn">Update</button>
+												<button type="submit" name="submit" value="Update" id="submit" class="btn-primary btn">Atualizar</button>
 												</div>
 											</div>
 
