@@ -147,10 +147,10 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->PostingDate);?></td>
 										<td><?php if($result->status=="" || $result->status==0)
 {
-	?><a href="testimonials.php?aeid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Você realmente deseja ativar')"> Desativar</a>
+	?><a href="testimonials.php?aeid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Você realmente deseja ativar')"> ATIVAR</a>
 <?php } else {?>
 
-<a href="testimonials.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Você realmente quer ficar inativo')"> Ativar</a>
+<a href="testimonials.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Você realmente quer ficar inativo')"> DESATIVAR</a>
 </td>
 <?php } ?></td>
 										</tr>
