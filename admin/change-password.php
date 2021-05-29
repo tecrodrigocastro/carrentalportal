@@ -26,10 +26,10 @@ $chngpwd1 = $dbh->prepare($con);
 $chngpwd1-> bindParam(':username', $username, PDO::PARAM_STR);
 $chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
 $chngpwd1->execute();
-$msg="Your Password succesfully changed";
+$msg="Sua senha foi alterada com sucesso";
 }
 else {
-$error="Your current password is not valid.";	
+$error="Sua senha atual não é válida.";	
 }
 }
 ?>
@@ -45,7 +45,7 @@ $error="Your current password is not valid.";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal | Admin Change Password</title>
+	<title>Car Rental Portal | Mudar senha</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -107,20 +107,20 @@ return true;
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Change Password</h2>
+						<h2 class="page-title">Alterar senha</h2>
 
 						<div class="row">
 							<div class="col-md-10">
 								<div class="panel panel-default">
-									<div class="panel-heading">Form fields</div>
+									<div class="panel-heading">campos do formulario</div>
 									<div class="panel-body">
 										<form method="post" name="chngpwd" class="form-horizontal" onSubmit="return valid();">
 										
 											
-  	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+  	        	  <?php if($error){?><div class="errorWrap"><strong>ERRO</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+				else if($msg){?><div class="succWrap"><strong>SUCESSO</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 											<div class="form-group">
-												<label class="col-sm-4 control-label">Current Password</label>
+												<label class="col-sm-4 control-label">Senha atual</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="password" id="password" required>
 												</div>
@@ -128,7 +128,7 @@ return true;
 											<div class="hr-dashed"></div>
 											
 											<div class="form-group">
-												<label class="col-sm-4 control-label">New Password</label>
+												<label class="col-sm-4 control-label">Nova Senha</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="newpassword" id="newpassword" required>
 												</div>
@@ -136,7 +136,7 @@ return true;
 											<div class="hr-dashed"></div>
 
 											<div class="form-group">
-												<label class="col-sm-4 control-label">Confirm Password</label>
+												<label class="col-sm-4 control-label">Repita a senha</label>
 												<div class="col-sm-8">
 													<input type="password" class="form-control" name="confirmpassword" id="confirmpassword" required>
 												</div>
@@ -148,7 +148,7 @@ return true;
 											<div class="form-group">
 												<div class="col-sm-8 col-sm-offset-4">
 								
-													<button class="btn btn-primary" name="submit" type="submit">Save changes</button>
+													<button class="btn btn-primary" name="submit" type="submit">Salvar alterações</button>
 												</div>
 											</div>
 
